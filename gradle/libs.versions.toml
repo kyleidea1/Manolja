@@ -9,8 +9,11 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
-retrofit = "2.9.0"  # 2.11.0 대신 2.9.0으로 수정, 이 버전이 더 많이 사용됨
-room = "2.6.1"  # roomCommon 대신 room으로 이름 변경
+sendbirdAndroidSdk = "3.0.75"
+sendbirdChat = "4.18.0"
+roomCommon = "2.6.1"
+retrofit = "2.9.0"
+room = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -25,6 +28,9 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+sendbird-android-sdk = { module = "com.sendbird.sdk:sendbird-android-sdk", version.ref = "sendbirdAndroidSdk" }
+sendbird-chat = { module = "com.sendbird.sdk:sendbird-chat", version.ref = "sendbirdChat" }
+androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 
 [plugins]

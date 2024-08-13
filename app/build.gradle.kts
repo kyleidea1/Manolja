@@ -1,6 +1,9 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
     id("com.google.devtools.ksp")
 }
 
@@ -18,7 +21,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -40,7 +42,15 @@ android {
     }
 }
 
+
 dependencies {
+
+    // Glide 라이브러리 추가
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    kapt("com.github.bumptech.glide:compiler:4.12.0")
+
+    // SendBird 라이브러리 추가
+    implementation(libs.sendbird.chat)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
