@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "878525628040",
+    "project_id": "manolja-ef51e",
+    "storage_bucket": "manolja-ef51e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878525628040:android:d0bb43763de81365eba93d",
+        "android_client_info": {
+          "package_name": "com.example.manolja"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlWZzeOgPSr_KOxMBDFCeMVhWeWBnCNBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

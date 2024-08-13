@@ -1,4 +1,4 @@
-package data
+package com.example.manolja.data
 
 data class RecordItem(
     val date: String,

@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.manolja.R
-import data.RecordItem
+import com.example.manolja.data.RecordItem
 
 class RecordFragment : Fragment() {
 
