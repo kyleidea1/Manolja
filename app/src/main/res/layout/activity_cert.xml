@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CertActivity">
+
+    <!-- 사진 미리보기 이미지뷰 -->
+    <ImageView
+        android:id="@+id/imageViewPreview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonUpload"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="사진 미리보기" />
+
+    <!-- 사진 업로드 버튼 -->
+    <Button
+        android:id="@+id/buttonUpload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="사진 업로드"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
+        android:layout_marginBottom="16dp" />
+
+    <!-- 확인 및 취소 버튼 컨테이너 -->
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center">
+
+        <!-- 확인 버튼 -->
+        <Button
+            android:id="@+id/buttonConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="확인"/>
+
+        <!-- 취소 버튼 -->
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="취소"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

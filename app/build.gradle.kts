@@ -15,6 +15,10 @@ android {
         viewBinding = true
     }
 
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.example.manolja"
         minSdk = 24
