@@ -11,6 +11,7 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 sendbirdAndroidSdk = "3.0.75"
 sendbirdChat = "4.18.0"
+roomCommon = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -23,6 +24,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 sendbird-android-sdk = { module = "com.sendbird.sdk:sendbird-android-sdk", version.ref = "sendbirdAndroidSdk" }
 sendbird-chat = { module = "com.sendbird.sdk:sendbird-chat", version.ref = "sendbirdChat" }
+androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
