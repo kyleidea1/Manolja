@@ -32,6 +32,10 @@ public class Quest {
     @Column
     private int exp;
 
+    @NonNull
+    @Column
+    private boolean isToday;
+
     @OneToMany(mappedBy = "place")
-    private List<Reward> rewards = new ArrayList<>;
+    private List<Reward> rewards = new ArrayList<>();
 }

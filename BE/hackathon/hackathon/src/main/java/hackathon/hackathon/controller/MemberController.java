@@ -1,15 +1,13 @@
 package hackathon.hackathon.controller;
 
+import hackathon.hackathon.dto.MemberFindResponseDto;
 import hackathon.hackathon.dto.MemberSaveRequestDto;
 import hackathon.hackathon.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Controller
@@ -31,5 +29,17 @@ public class MemberController {
                     .body(ex.getMessage());
         }
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/{uuid}")
+    public ResponseEntity<?> findMember(@PathVariable("uuid") String uuid) {
+        MemberFindResponseDto memberFindResponseDto = null;
+        try {
+            memberFindResponseDto = memberService.findMember(uuid);
+        } catch(IllegalAccessException ex) {
+            return ResponseEntity.status(404)
+                    .body(ex.getMessage());
+        }
+        return ResponseEntity.ok().body(memberFindResponseDto);
     }
 }
