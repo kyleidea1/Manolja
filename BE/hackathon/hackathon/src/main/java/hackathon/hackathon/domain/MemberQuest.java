@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@RequiredArgsConstructor
 @NoArgsConstructor
 public class MemberQuest {
 
@@ -32,4 +31,10 @@ public class MemberQuest {
     @NonNull
     @Column
     private LocalDateTime date;
+
+    public MemberQuest(Member member, Quest quest) {
+        this.member = member;
+        this.quest = quest;
+        date = LocalDateTime.now();
+    }
 }

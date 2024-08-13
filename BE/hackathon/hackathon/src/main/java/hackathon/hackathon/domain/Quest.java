@@ -36,6 +36,7 @@ public class Quest {
     @Column
     private boolean isToday;
 
-    @OneToMany(mappedBy = "place")
-    private List<Reward> rewards = new ArrayList<>();
+    @NonNull
+    @Column
+    private String place;
 }

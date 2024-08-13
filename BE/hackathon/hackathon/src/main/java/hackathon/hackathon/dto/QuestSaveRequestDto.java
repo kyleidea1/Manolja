@@ -11,4 +11,5 @@ public class QuestSaveRequestDto {
     String name;
     String content;
     int exp;
+    String place;
 }
