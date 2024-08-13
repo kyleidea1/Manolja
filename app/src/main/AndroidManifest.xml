@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Manolja"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.fragment.QuestDetailFragment"
+            android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true">
