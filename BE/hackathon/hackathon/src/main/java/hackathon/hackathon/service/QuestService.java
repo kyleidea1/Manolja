@@ -46,7 +46,8 @@ public class QuestService {
                 rewardSaveRequestDto.getName(),
                 rewardSaveRequestDto.getContent(),
                 rewardSaveRequestDto.getCoupon(),
-                rewardSaveRequestDto.getPlace()
+                rewardSaveRequestDto.getPlace(),
+                rewardSaveRequestDto.getDiscount()
         );
         rewardRepository.save(reward);
     }

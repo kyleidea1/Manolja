@@ -31,4 +31,8 @@ public class Reward {
     @NonNull
     @Column
     private String place;
+
+    @NonNull
+    @Column
+    private double discount;
 }

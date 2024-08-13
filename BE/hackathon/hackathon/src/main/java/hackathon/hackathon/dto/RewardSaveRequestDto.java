@@ -13,4 +13,5 @@ public class RewardSaveRequestDto {
     String content;
     String coupon;
     String place;
+    double discount;
 }
