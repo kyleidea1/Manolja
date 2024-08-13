@@ -7,6 +7,10 @@ android {
     namespace = "com.example.manolja"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.manolja"
         minSdk = 24
