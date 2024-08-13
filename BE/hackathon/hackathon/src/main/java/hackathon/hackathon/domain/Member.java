@@ -23,4 +23,7 @@ public class Member {
     @Column
     private int exp;
 
+    public void increaseExp(int exp) {
+        this.exp += exp;
+    }
 }

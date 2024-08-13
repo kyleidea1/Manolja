@@ -80,6 +80,7 @@ public class QuestService {
     public void setCompleteQuest(String uuid) {
         Member member = memberRepository.findByUuid(uuid).get();
         Quest todayQuest = questRepository.findByIsTodayTrue().get(0);
+        member.increaseExp(todayQuest.getExp());
         MemberQuest memberQuest = new MemberQuest(member, todayQuest);
         memberQuestRepository.save(memberQuest);
     }
