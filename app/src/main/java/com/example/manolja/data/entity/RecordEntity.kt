@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey
 data class RecordEntity(
     @PrimaryKey(autoGenerate = true) val recordId: Int = 0,
     val title: String,
-    val content: String,
-    val imagePath: String
+    var content: String,
+    val imagePath: String,
+    val date: String
 )
