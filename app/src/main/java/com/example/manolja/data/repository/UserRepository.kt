@@ -9,8 +9,8 @@ class UserRepository(private val userDao: UserDao) {
         userDao.insertUser(user)
     }
 
-    suspend fun getUserById(id: Int): UserEntity? {
-        return userDao.getUserById(id)
+    suspend fun getUserById(uuid: String): UserEntity? {
+        return userDao.getUserByUuid(uuid)
     }
 
     suspend fun updateUser(user: UserEntity) {

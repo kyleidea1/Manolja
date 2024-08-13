@@ -12,9 +12,15 @@ constraintlayout = "2.1.4"
 sendbirdAndroidSdk = "3.0.75"
 sendbirdChat = "4.18.0"
 roomCommon = "2.6.1"
+retrofit = "2.9.0"
+room = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -25,8 +31,8 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 sendbird-android-sdk = { module = "com.sendbird.sdk:sendbird-android-sdk", version.ref = "sendbirdAndroidSdk" }
 sendbird-chat = { module = "com.sendbird.sdk:sendbird-chat", version.ref = "sendbirdChat" }
 androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
