@@ -1,36 +1,61 @@
+package com.example.manolja.ui.adapter
+
+import Coupon
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.manolja.databinding.QuestitemBinding
-import com.example.manolja.ui.Quest
+import com.example.manolja.R
 
 class QuestAdapter(
-    private val questList: List<Quest>,
-    private val onItemClick: (Quest) -> Unit
-) : RecyclerView.Adapter<QuestAdapter.QuestViewHolder>() {
+    private val couponItems: MutableList<Coupon> = mutableListOf(),
+    private var itemsEnabled: Boolean = false
+) : RecyclerView.Adapter<QuestAdapter.ViewHolder>() {
 
-    inner class QuestViewHolder(private val binding: QuestitemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(quest: Quest) {
-            binding.questname.text = quest.name
-            binding.location.text = quest.location
-            binding.reward.text = quest.reward
+    private var itemClickListener: ((String) -> Unit)? = null
 
-            binding.root.setOnClickListener {
-                onItemClick(quest)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvCoupon: TextView = itemView.findViewById(R.id.tvCoupon)
+        val tvLocation: TextView = itemView.findViewById(R.id.tvLocation)
+
+        init {
+            itemView.setOnClickListener {
+                if (itemsEnabled) {
+                    val couponName = tvCoupon.text.toString()
+                    itemClickListener?.invoke(couponName)
+                }
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuestViewHolder {
-        val binding = QuestitemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return QuestViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.questitem, parent, false)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: QuestViewHolder, position: Int) {
-        holder.bind(questList[position])
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = couponItems[position]
+        holder.tvCoupon.text = item.name
+        holder.tvLocation.text = item.location
+        holder.itemView.isEnabled = itemsEnabled
     }
 
-    override fun getItemCount(): Int {
-        return questList.size
+    override fun getItemCount(): Int = couponItems.size
+
+    fun setItemsEnabled(enabled: Boolean) {
+        itemsEnabled = enabled
+        notifyDataSetChanged()
+    }
+
+    fun setOnItemClickListener(listener: (String) -> Unit) {
+        itemClickListener = listener
+    }
+
+    fun addCoupons(newCoupons: List<Coupon>) {
+        couponItems.clear()
+        couponItems.addAll(newCoupons)
+        notifyDataSetChanged()
     }
 }

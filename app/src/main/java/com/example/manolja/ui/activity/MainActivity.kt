@@ -1,11 +1,11 @@
 package com.example.manolja.ui.activity
 
-import QuestFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.manolja.R
 import com.example.manolja.databinding.ActivityMainBinding
 import com.example.manolja.ui.fragment.HomeFragment
+import com.example.manolja.ui.fragment.QuestFragment
 import com.example.manolja.ui.fragment.RecordFragment
 
 class MainActivity : AppCompatActivity() {

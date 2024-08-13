@@ -5,40 +5,28 @@
     android:layout_height="wrap_content"
     android:padding="20dp"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:enabled="false">
 
     <TextView
-        android:id="@+id/questname"
+        android:id="@+id/tvCoupon"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:gravity="center_vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/location"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="퀘스트명" />
+        tools:text="쿠폰명" />
 
     <TextView
-        android:id="@+id/location"
+        android:id="@+id/tvLocation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/questname"
-        app:layout_constraintEnd_toStartOf="@+id/reward"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="주소" />
-
-    <TextView
-        android:id="@+id/reward"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="보상" />
+        tools:text="장소" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

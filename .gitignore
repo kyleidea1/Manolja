@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/src/main/res/layout/activity_cert.xml
+/app/src/main/res/layout/activity_group_chat.xml
+/app/src/main/java/com/example/manolja/ui/activity/CertActivity.kt
+/app/src/main/java/com/example/manolja/ui/Coupon.kt
+/app/src/main/java/com/example/manolja/ui/activity/GroupChatActivity.kt
+/app/src/main/java/com/example/manolja/ui/QuestAdapter.kt
