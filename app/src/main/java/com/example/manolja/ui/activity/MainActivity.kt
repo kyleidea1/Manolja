@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         setupBottomNavigationView()
 
-        // 앱이 처음 시작될 때 홈 프래그먼트를 로드
         if (savedInstanceState == null) {
             loadFragment(HomeFragment())
         }

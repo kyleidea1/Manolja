@@ -7,6 +7,5 @@ import androidx.room.PrimaryKey
 data class UserEntity(
     @PrimaryKey val uuid: String,
     val nickname: String,
-    val exp: Int,
-    val day: Int
+    val exp: Int
 )

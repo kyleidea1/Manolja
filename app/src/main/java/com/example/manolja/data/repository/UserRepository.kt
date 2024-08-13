@@ -2,7 +2,6 @@ package com.example.manolja.data.repository
 
 import com.example.manolja.data.dao.UserDao
 import com.example.manolja.data.entity.UserEntity
-import java.util.UUID
 
 class UserRepository(private val userDao: UserDao) {
 
