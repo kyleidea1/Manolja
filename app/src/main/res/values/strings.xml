@@ -2,4 +2,5 @@
     <string name="app_name">Manolja</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sendBird_key">0E434805-DB69-4DA1-BF58-04E8FE4E3BB7</string>
 </resources>
