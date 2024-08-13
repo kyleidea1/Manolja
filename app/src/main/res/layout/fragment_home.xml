@@ -8,7 +8,7 @@
     android:padding="16dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivHp"
         android:layout_width="235dp"
         android:layout_height="71dp"
         android:src="@drawable/iv_hp"
@@ -18,6 +18,7 @@
         android:layout_marginTop="10dp"/>
 
     <ImageView
+        android:id="@+id/ivHpBar"
         android:layout_width="140dp"
         android:layout_height="20dp"
         android:src="@drawable/iv_hp_bar"
@@ -28,6 +29,16 @@
         android:layout_marginStart="60dp"/>
 
     <ImageView
+        android:id="@+id/ivCoupon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/iv_coupon"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivHp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/ivMail"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -36,7 +47,7 @@
         app:layout_constraintBottom_toTopOf="@+id/ivBoogiEgg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/ivHp" />
 
     <ImageView
         android:id="@+id/ivBoogiEgg"
