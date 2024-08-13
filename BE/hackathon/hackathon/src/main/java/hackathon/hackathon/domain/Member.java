@@ -23,7 +23,15 @@ public class Member {
     @Column
     private int exp;
 
+    @OneToOne
+    @JoinColumn
+    private Reward reward;
+
     public void increaseExp(int exp) {
         this.exp += exp;
+    }
+
+    public void addCoupon(Reward reward) {
+        this.reward = reward;
     }
 }

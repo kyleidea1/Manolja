@@ -6,6 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class RewardSelectResponseDto {
+    long rewardNo;
     String name;
     String content;
     String coupon;

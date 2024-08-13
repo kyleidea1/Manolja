@@ -1,6 +1,5 @@
 package hackathon.hackathon.controller;
 
-import hackathon.hackathon.domain.Quest;
 import hackathon.hackathon.dto.QuestSaveRequestDto;
 import hackathon.hackathon.dto.QuestResponseDto;
 import hackathon.hackathon.dto.RewardSaveRequestDto;
@@ -34,6 +33,16 @@ public class QuestController {
     public ResponseEntity<QuestResponseDto> getTodayQuest() {
         return ResponseEntity.ok().body(questService.getTodayQuest());
     }
+    @GetMapping("/quest/coupon/{uuid}")
+    public ResponseEntity<?> getMemberCoupon(@PathVariable("uuid") String uuid) {
+        RewardSelectResponseDto rewardSelectResponseDto = null;
+        try {
+            rewardSelectResponseDto = questService.getMemberCoupon(uuid);
+        } catch (IllegalAccessException ex) {
+            ResponseEntity.status(404).body(ex.getMessage());
+        }
+        return ResponseEntity.ok().body(rewardSelectResponseDto);
+    }
 
     @GetMapping("/quest/complete/{uuid}")
     public ResponseEntity<List<QuestResponseDto>> getCompleteQuest(@PathVariable("uuid") String uuid){
@@ -45,6 +54,8 @@ public class QuestController {
         questService.setCompleteQuest(uuid);
         return ResponseEntity.ok().build();
     }
+
+
 
     /**
      * reward
@@ -58,11 +69,11 @@ public class QuestController {
 
     }
 
-    @GetMapping("/reward/select/{uuid}")
-    public ResponseEntity<?> selectReward(@PathVariable("uuid") String uuid) {
+    @GetMapping("/reward/show/{uuid}")
+    public ResponseEntity<?> showSelectReward(@PathVariable("uuid") String uuid) {
         List<RewardSelectResponseDto> list = null;
         try {
-            list = questService.selectReward(uuid);
+            list = questService.showSelectReward(uuid);
         } catch(IllegalAccessException ex) {
             return ResponseEntity.status(401)
                     .body(ex.getMessage());
@@ -70,5 +81,9 @@ public class QuestController {
         return ResponseEntity.ok().body(list);
     }
 
-    //@GetMapping
+    @GetMapping("/reward/select/{rewardNo}/{uuid}")
+    public ResponseEntity<?> selectReward(@PathVariable("rewardNo") long rewardNo, @PathVariable("uuid") String uuid) {
+        questService.selectReward(rewardNo, uuid);
+        return ResponseEntity.ok().build();
+    }
 }

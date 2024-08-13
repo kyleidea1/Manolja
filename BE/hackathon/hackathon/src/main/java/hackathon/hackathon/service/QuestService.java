@@ -87,7 +87,7 @@ public class QuestService {
         memberQuestRepository.save(memberQuest);
     }
 
-    public List<RewardSelectResponseDto> selectReward(String uuid) throws IllegalAccessException {
+    public List<RewardSelectResponseDto> showSelectReward(String uuid) throws IllegalAccessException {
         if(!isMemberComplete(uuid))
             throw new IllegalAccessException("심부름을 완료하지않은 사용자");
         Quest todayQuest = questRepository.findByIsTodayTrue().get(0);
@@ -95,6 +95,7 @@ public class QuestService {
         List<RewardSelectResponseDto> responseList = new ArrayList<>();
         for(Reward reward : rewardList) {
             RewardSelectResponseDto rewardSelectResponseDto = new RewardSelectResponseDto(
+                    reward.getRewardNo(),
                     reward.getName(),
                     reward.getContent(),
                     reward.getCoupon(),
@@ -104,6 +105,27 @@ public class QuestService {
             responseList.add(rewardSelectResponseDto);
         }
         return responseList;
+    }
+
+    public void selectReward(long rewardNo, String uuid) {
+        Member member = memberRepository.findByUuid(uuid).get();
+        Reward reward = rewardRepository.findRewardByRewardNo(rewardNo);
+        member.addCoupon(reward);
+    }
+    public RewardSelectResponseDto getMemberCoupon(String uuid) throws IllegalAccessException {
+        Member member = memberRepository.findByUuid(uuid).get();
+        Reward reward = member.getReward();
+        if(reward == null)
+            throw new IllegalAccessException("쿠폰 보유 X (금일 퀘스트 완료 X)");
+        RewardSelectResponseDto rewardSelectResponseDto = new RewardSelectResponseDto(
+                reward.getRewardNo(),
+                reward.getName(),
+                reward.getContent(),
+                reward.getCoupon(),
+                reward.getPlace(),
+                reward.getDiscount()
+        );
+        return rewardSelectResponseDto;
     }
 
     public boolean isMemberComplete(String uuid) {
