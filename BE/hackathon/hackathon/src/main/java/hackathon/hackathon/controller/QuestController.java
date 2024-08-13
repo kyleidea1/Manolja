@@ -58,7 +58,7 @@ public class QuestController {
 
     }
 
-    @PostMapping("/reward/select/{uuid}")
+    @GetMapping("/reward/select/{uuid}")
     public ResponseEntity<?> selectReward(@PathVariable("uuid") String uuid) {
         List<RewardSelectResponseDto> list = null;
         try {
@@ -69,4 +69,6 @@ public class QuestController {
         }
         return ResponseEntity.ok().body(list);
     }
+
+    //@GetMapping
 }
