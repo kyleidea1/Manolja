@@ -4,6 +4,7 @@ import hackathon.hackathon.domain.Quest;
 import hackathon.hackathon.dto.QuestSaveRequestDto;
 import hackathon.hackathon.dto.QuestResponseDto;
 import hackathon.hackathon.dto.RewardSaveRequestDto;
+import hackathon.hackathon.dto.RewardSelectResponseDto;
 import hackathon.hackathon.service.QuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,12 +29,6 @@ public class QuestController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/reward/create")
-    public ResponseEntity<?> createReward(@RequestBody RewardSaveRequestDto rewardSaveRequestDto) {
-        questService.createReward(rewardSaveRequestDto);
-        return ResponseEntity.ok().build();
-
-    }
 
     @GetMapping("/quest/today")
     public ResponseEntity<QuestResponseDto> getTodayQuest() {
@@ -49,5 +44,29 @@ public class QuestController {
     public ResponseEntity<?> setCompleteQuest(@PathVariable("uuid") String uuid) {
         questService.setCompleteQuest(uuid);
         return ResponseEntity.ok().build();
+    }
+
+    /**
+     * reward
+     */
+
+
+    @PostMapping("/reward/create")
+    public ResponseEntity<?> createReward(@RequestBody RewardSaveRequestDto rewardSaveRequestDto) {
+        questService.createReward(rewardSaveRequestDto);
+        return ResponseEntity.ok().build();
+
+    }
+
+    @PostMapping("/reward/select/{uuid}")
+    public ResponseEntity<?> selectReward(@PathVariable("uuid") String uuid) {
+        List<RewardSelectResponseDto> list = null;
+        try {
+            list = questService.selectReward(uuid);
+        } catch(IllegalAccessException ex) {
+            return ResponseEntity.status(401)
+                    .body(ex.getMessage());
+        }
+        return ResponseEntity.ok().body(list);
     }
 }

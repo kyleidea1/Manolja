@@ -7,6 +7,7 @@ import hackathon.hackathon.domain.Reward;
 import hackathon.hackathon.dto.QuestSaveRequestDto;
 import hackathon.hackathon.dto.QuestResponseDto;
 import hackathon.hackathon.dto.RewardSaveRequestDto;
+import hackathon.hackathon.dto.RewardSelectResponseDto;
 import hackathon.hackathon.repository.MemberQuestRepository;
 import hackathon.hackathon.repository.MemberRepository;
 import hackathon.hackathon.repository.QuestRepository;
@@ -84,5 +85,34 @@ public class QuestService {
         member.increaseExp(todayQuest.getExp());
         MemberQuest memberQuest = new MemberQuest(member, todayQuest);
         memberQuestRepository.save(memberQuest);
+    }
+
+    public List<RewardSelectResponseDto> selectReward(String uuid) throws IllegalAccessException {
+        if(!isMemberComplete(uuid))
+            throw new IllegalAccessException("심부름을 완료하지않은 사용자");
+        Quest todayQuest = questRepository.findByIsTodayTrue().get(0);
+        List<Reward> rewardList = rewardRepository.findRewardsByPlace(todayQuest.getPlace());
+        List<RewardSelectResponseDto> responseList = new ArrayList<>();
+        for(Reward reward : rewardList) {
+            RewardSelectResponseDto rewardSelectResponseDto = new RewardSelectResponseDto(
+                    reward.getName(),
+                    reward.getContent(),
+                    reward.getCoupon(),
+                    reward.getPlace(),
+                    reward.getDiscount()
+            );
+            responseList.add(rewardSelectResponseDto);
+        }
+        return responseList;
+    }
+
+    public boolean isMemberComplete(String uuid) {
+        Quest todayQuest = questRepository.findByIsTodayTrue().get(0);
+        List<MemberQuest> memberQuestList = memberQuestRepository.findByQuest(todayQuest);
+        for(MemberQuest mq : memberQuestList) {
+            if(mq.getMember().getUuid().equals(uuid))
+                return true;
+        }
+        return false;
     }
 }
