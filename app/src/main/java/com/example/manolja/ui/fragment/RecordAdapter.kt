@@ -6,7 +6,6 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.manolja.R
 
 class RecordAdapter(private val recordItems: List<RecordEntity>) : RecyclerView.Adapter<RecordAdapter.ViewHolder>() {
@@ -21,9 +20,8 @@ class RecordAdapter(private val recordItems: List<RecordEntity>) : RecyclerView.
         holder.date.text = recordItem.date
         holder.content.text = recordItem.content
 
-        Glide.with(holder.itemView.context)
-            .load(recordItem.imagePath)
-            .into(holder.imageView)
+        // 더미 이미지를 사용하여 ImageView에 설정
+        holder.imageView.setImageResource(R.drawable.iv_boogi_baby)
 
         // 아이템 클릭 시 팝업을 띄우는 리스너 설정
         holder.itemView.setOnClickListener {
@@ -51,9 +49,8 @@ class RecordAdapter(private val recordItems: List<RecordEntity>) : RecyclerView.
         popupDate.text = recordItem.date
         popupCaptionEdit.setText(recordItem.content)
 
-        Glide.with(view.context)
-            .load(recordItem.imagePath)
-            .into(popupImageView)
+        // 더미 이미지를 사용하여 팝업의 ImageView에 설정
+        popupImageView.setImageResource(R.drawable.iv_boogi_baby)
 
         // AlertDialog를 생성하고 팝업을 표시
         AlertDialog.Builder(view.context)

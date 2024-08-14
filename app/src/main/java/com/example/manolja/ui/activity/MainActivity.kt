@@ -1,48 +1,39 @@
 package com.example.manolja.ui.activity
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.manolja.R
+import com.example.manolja.data.api.RetrofitProvider
 import com.example.manolja.databinding.ActivityMainBinding
 import com.example.manolja.ui.fragment.HomeFragment
 import com.example.manolja.ui.fragment.QuestFragment
 import com.example.manolja.ui.fragment.RecordFragment
-//import com.example.manolja.data.api.ApiService
-//import retrofit2.Retrofit
-//import retrofit2.converter.gson.GsonConverterFactory
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
 
 class MainActivity : AppCompatActivity() {
-
+    private val scope = CoroutineScope(Dispatchers.Main)
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
-
-//    private lateinit var apiService: ApiService
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        // Retrofit 객체 생성
-//        setupRetrofit()
-
         // 바텀 네비게이션 설정
         setupBottomNavigationView()
-
+        scope.launch {
+            Log.d("test", "onCreate: ${RetrofitProvider.questApiService.getTodayQuest().name}")
+        }
         // 첫 화면으로 홈 프래그먼트 로드
         if (savedInstanceState == null) {
             loadFragment(HomeFragment())
         }
     }
-
-//    private fun setupRetrofit() {
-//        val retrofit = Retrofit.Builder()
-//            .baseUrl("https://manolja.com/") // 여기에 백엔드 API의 기본 URL을 넣으세요.
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//
-//        apiService = retrofit.create(ApiService::class.java)
-//    }
 
     private fun setupBottomNavigationView() {
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
