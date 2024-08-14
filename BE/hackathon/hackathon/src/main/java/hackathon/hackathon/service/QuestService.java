@@ -16,6 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -131,8 +134,11 @@ public class QuestService {
     public boolean isMemberComplete(String uuid) {
         Quest todayQuest = questRepository.findByIsTodayTrue().get(0);
         List<MemberQuest> memberQuestList = memberQuestRepository.findByQuest(todayQuest);
+        LocalDateTime today = LocalDateTime.now();
+        LocalDateTime startOfToday = LocalDateTime.of(LocalDate.now(), LocalTime.MIDNIGHT);
+
         for(MemberQuest mq : memberQuestList) {
-            if(mq.getMember().getUuid().equals(uuid))
+            if(mq.getMember().getUuid().equals(uuid) && mq.getDate().isAfter(startOfToday))
                 return true;
         }
         return false;
