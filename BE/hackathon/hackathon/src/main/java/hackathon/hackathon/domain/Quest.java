@@ -39,4 +39,8 @@ public class Quest {
     @NonNull
     @Column
     private String place;
+
+    public void switchIsToday() {
+        this.isToday = !this.isToday;
+    }
 }

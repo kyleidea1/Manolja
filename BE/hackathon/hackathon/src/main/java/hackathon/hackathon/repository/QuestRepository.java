@@ -9,4 +9,5 @@ public interface QuestRepository extends JpaRepository<Quest, Long> {
 //    Quest findQuestByIsToday();
     List<Quest> findByIsTodayTrue();
 
+    List<Quest> findAll();
 }

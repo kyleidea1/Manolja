@@ -34,4 +34,8 @@ public class Member {
     public void addCoupon(Reward reward) {
         this.reward = reward;
     }
+
+    public void setRewardNull() {
+        this.reward = null;
+    }
 }
