@@ -10,6 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import okhttp3.Dispatcher
 import java.util.UUID
+import kotlin.random.Random
 
 class Manolja : Application() {
 
@@ -36,10 +37,12 @@ class Manolja : Application() {
         super.onCreate()
         val scope = CoroutineScope(Dispatchers.Main)
         val uuid = getUUID(applicationContext)
-        val nickname = "테스트유저"
         scope.launch {
-            RetrofitProvider.memberApiService.initMember(MemberPost(uuid, "부기"))
+            RetrofitProvider.memberApiService.initMember(MemberPost(uuid, "부기${generateRandomInt(1,999)}"))
         }
     }
+}
 
+fun generateRandomInt(min: Int, max: Int): Int {
+    return Random.nextInt(min, max + 1) // min <= result <= max
 }

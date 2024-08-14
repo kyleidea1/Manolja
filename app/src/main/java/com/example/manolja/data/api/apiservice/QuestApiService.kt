@@ -1,5 +1,6 @@
 package com.example.manolja.data.api.apiservice
 
+import com.example.manolja.data.api.apiresponse.CouponApiResponse
 import com.example.manolja.data.api.apiresponse.QuestApiResponse
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -17,4 +18,7 @@ interface QuestApiService {
 
     @GET("quest/isComplete/{uuid}")
     suspend fun isComplete(@Path("uuid") uuid: String): Boolean
+
+    @GET("quest/coupon/{uuid}")
+    suspend fun checkCoupon(@Path("uuid") uuid: String): CouponApiResponse
 }

@@ -6,3 +6,12 @@ data class QuestApiResponse(
     val exp: Int,
     val place: String
 )
+
+data class CouponApiResponse(
+    val rewardNo: Int,
+    val name: String,
+    val content: String,
+    val coupon: String,
+    val place: String,
+    val discount: Double
+)
