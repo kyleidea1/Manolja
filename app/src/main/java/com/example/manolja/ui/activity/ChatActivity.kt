@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.manolja.R
 import com.example.manolja.data.Message
-import com.example.manolja.ui.MessageAdapter
+import com.example.manolja.ui.adapter.MessageAdapter
 import com.google.firebase.database.*
 
 class ChatActivity : AppCompatActivity() {
@@ -20,7 +20,7 @@ class ChatActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
     private lateinit var messages: MutableList<Message>
-    private val currentUser = "김주송"
+    private val currentUser = "김정희"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

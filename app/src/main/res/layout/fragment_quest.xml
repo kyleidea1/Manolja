@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/img"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    tools:context=".ui.fragment.QuestFragment">
+    <LinearLayout
+        android:id="@+id/ivMissionTextbox"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:background="@drawable/iv_mission_textbox"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recyclerView"/>
 
     <TextView
-        android:id="@+id/text_home"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvMissionContent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Quest Fragment"
-        android:textSize="24sp"
-        android:layout_gravity="center" />
-</FrameLayout>
+        android:layout_marginTop="16dp"
+        android:text="Mission"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/ivMissionTextbox"
+        app:layout_constraintTop_toTopOf="@+id/ivMissionTextbox"
+        app:layout_constraintEnd_toEndOf="@+id/ivMissionTextbox"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMissionTextbox"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/ivMissionTextbox"
+        app:layout_constraintBottom_toTopOf="@+id/btnChat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnChat"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="채팅방"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/sand_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnPhoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+    <Button
+        android:id="@+id/btnPhoto"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:text="사진 선택"
+        android:backgroundTint="@color/sand_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnChat"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

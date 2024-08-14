@@ -1,3 +1,5 @@
+package com.example.manolja.ui.adapter
+
 import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View

@@ -1,4 +1,4 @@
-package com.example.manolja.ui
+package com.example.manolja.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

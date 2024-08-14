@@ -1,6 +1,6 @@
 package com.example.manolja.ui.fragment
 
-import RecordAdapter
+import com.example.manolja.ui.adapter.RecordAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
