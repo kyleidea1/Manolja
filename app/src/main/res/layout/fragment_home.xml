@@ -21,7 +21,7 @@
         android:id="@+id/ivHpBar"
         android:layout_width="140dp"
         android:layout_height="20dp"
-        android:src="@drawable/iv_hp_bar"
+        android:src="@drawable/iv_hp_bar_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

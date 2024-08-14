@@ -24,17 +24,22 @@ class HomeFragment : Fragment() {
     private lateinit var layoutTextContainer: LinearLayout
     private lateinit var tvNoCoupons: TextView
     private var isCouponUsed: Boolean = false
+    private lateinit var ivHpBar: ImageView
+    private lateinit var ivBoogiEgg: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        var hp: Int = 1
 
         ivMail = view.findViewById(R.id.ivMail)
         tvQuestPrompt = view.findViewById(R.id.tvQuestPrompt)
         textContainer = view.findViewById(R.id.textContainer)
         ivCoupon = view.findViewById(R.id.ivCoupon)
+        ivHpBar = view.findViewById(R.id.ivHpBar)
+        ivBoogiEgg = view.findViewById(R.id.ivBoogiEgg)
 
         ivMail.setOnClickListener {
             tvQuestPrompt.visibility = View.INVISIBLE
@@ -46,6 +51,7 @@ class HomeFragment : Fragment() {
             showCouponDialog()
         }
 
+        updateImages(hp)
         return view
     }
 
@@ -85,5 +91,22 @@ class HomeFragment : Fragment() {
             }
             .setNegativeButton("취소", null)
             .show()
+    }
+
+    private fun updateImages(hp: Int) {
+        when (hp) {
+            1 -> {
+                ivHpBar.setImageResource(R.drawable.iv_hp_bar_1)
+                ivBoogiEgg.setImageResource(R.drawable.iv_boogi_egg)
+            }
+            2 -> {
+                ivHpBar.setImageResource(R.drawable.iv_hp_bar_2)
+                ivBoogiEgg.setImageResource(R.drawable.iv_boogi_baby)
+            }
+            3 -> {
+                ivHpBar.setImageResource(R.drawable.iv_hp_bar_3)
+                ivBoogiEgg.setImageResource(R.drawable.iv_boogi_adult)
+            }
+        }
     }
 }
