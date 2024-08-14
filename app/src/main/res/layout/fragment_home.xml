@@ -1,14 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/iv_home_backround"
     android:padding="16dp">
 
+    <ImageView
+        android:id="@+id/ivHp"
+        android:layout_width="235dp"
+        android:layout_height="71dp"
+        android:src="@drawable/iv_hp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/ivHpBar"
+        android:layout_width="140dp"
+        android:layout_height="20dp"
+        android:src="@drawable/iv_hp_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="60dp"/>
+
+    <ImageView
+        android:id="@+id/ivCoupon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/iv_coupon"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivHp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivMail"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/iv_mail"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/ivBoogiEgg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivHp" />
+
+    <ImageView
+        android:id="@+id/ivBoogiEgg"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/iv_boogi_egg"
+        app:layout_constraintBottom_toTopOf="@+id/ivTextBoxWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivTextBoxWhite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/iv_text_box_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/tvQuestPrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
+        android:visibility="visible"
+        android:text="오늘의 퀘스트를 확인하세요 !"
         android:textSize="24sp"
-        android:layout_gravity="center" />
-</FrameLayout>
+        app:layout_constraintTop_toTopOf="@+id/ivTextBoxWhite"
+        app:layout_constraintStart_toStartOf="@id/ivTextBoxWhite"
+        app:layout_constraintBottom_toBottomOf="@id/ivTextBoxWhite"
+        app:layout_constraintEnd_toEndOf="@id/ivTextBoxWhite"/>
+
+    <LinearLayout
+        android:id="@+id/textContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@+id/ivTextBoxWhite"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTextBoxWhite"
+        app:layout_constraintStart_toStartOf="@+id/ivTextBoxWhite"
+        app:layout_constraintEnd_toEndOf="@+id/ivTextBoxWhite">
+
+        <TextView
+            android:id="@+id/tvQuestName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="퀘스트명"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="위치"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
