@@ -53,7 +53,7 @@
         android:id="@+id/ivBoogiEgg"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/iv_boogi_egg"
+        android:src="@drawable/iv_boogi_adult"
         app:layout_constraintBottom_toTopOf="@+id/ivTextBoxWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -95,7 +95,7 @@
             android:id="@+id/tvQuestName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="퀘스트명"
+            android:text="보수동 책방 골목 입구에서\n사진을 찍으세요!"
             android:textStyle="bold"
             android:textSize="24sp"
             android:gravity="center"/>
@@ -104,7 +104,7 @@
             android:id="@+id/tvAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="위치"
+            android:text="부산광역시 중구 책방골목길"
             android:textSize="20sp"
             android:gravity="center"/>
 

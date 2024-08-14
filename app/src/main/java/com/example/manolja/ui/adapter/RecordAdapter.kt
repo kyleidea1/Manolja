@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.manolja.R
-import com.example.manolja.data.RecordItem
+import com.example.manolja.domain.RecordItem
 
 class RecordAdapter(private val recordItems: List<RecordItem>) : RecyclerView.Adapter<RecordAdapter.ViewHolder>() {
 

@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.manolja.R
-import com.example.manolja.data.Coupon
+import com.example.manolja.domain.Coupon
 import com.example.manolja.ui.activity.CertActivity
 import com.example.manolja.ui.activity.ChatActivity
 import com.example.manolja.ui.adapter.QuestAdapter
@@ -63,9 +63,9 @@ class QuestFragment : Fragment() {
 
         // 테스트용 쿠폰 추가
         val testCoupons = listOf(
-            Coupon("쿠폰 1", "위치 1", "50%", "내용이야"),
-            Coupon("쿠폰 2", "위치 2", "50%", "내용이야"),
-            Coupon("쿠폰 3", "위치 3", "50%", "내용이야")
+            Coupon("쿠폰 1", "우리글방 카페", "20%", "전체 금액의 20% 할인"),
+            Coupon("쿠폰 2", "광복경양식", "10%", "음료수 1개 추가 증정"),
+            Coupon("쿠폰 3", "책방골목 사진관", "30%", "친구와 사진찍기")
         )
         questAdapter.addCoupons(testCoupons)
 

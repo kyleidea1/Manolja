@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.manolja.R
-import com.example.manolja.data.Message
+import com.example.manolja.domain.Message
 import com.example.manolja.ui.adapter.MessageAdapter
 import com.google.firebase.database.*
 

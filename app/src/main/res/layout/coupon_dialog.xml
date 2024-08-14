@@ -18,7 +18,7 @@
             android:id="@+id/tvCouponName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="쿠폰명"
+            android:text="보수동 책방골목 우리글방 카페 음료 할인 쿠폰"
             android:textStyle="bold"
             android:textSize="32sp"
             android:layout_marginBottom="10dp"/>
@@ -27,7 +27,7 @@
             android:id="@+id/tvDiscountRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="할인율"
+            android:text="20%"
             android:layout_marginBottom="10dp"
             android:textSize="40sp"/>
 

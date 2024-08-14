@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.manolja.R
-import com.example.manolja.data.Coupon
+import com.example.manolja.domain.Coupon
 
 class QuestAdapter(
     private val couponItems: MutableList<Coupon> = mutableListOf(),
