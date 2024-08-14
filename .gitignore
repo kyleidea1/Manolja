@@ -19,3 +19,10 @@ local.properties
 /app/src/main/java/com/example/manolja/ui/Coupon.kt
 /app/src/main/java/com/example/manolja/ui/activity/GroupChatActivity.kt
 /app/src/main/java/com/example/manolja/ui/QuestAdapter.kt
+/app/src/main/res/drawable/bubble.png
+/app/src/main/res/drawable/coupon.png
+/app/src/main/res/drawable/image.png
+/app/src/main/res/drawable/img.png
+/app/src/main/res/drawable/img_1.png
+/app/src/main/res/drawable/iv_mission_textbox.png
+/app/src/main/res/drawable/yellowcoupon.png

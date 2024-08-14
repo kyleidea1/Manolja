@@ -63,9 +63,9 @@ class QuestFragment : Fragment() {
 
         // 테스트용 쿠폰 추가
         val testCoupons = listOf(
-            Coupon("쿠폰 1", "위치 1"),
-            Coupon("쿠폰 2", "위치 2"),
-            Coupon("쿠폰 3", "위치 3")
+            Coupon("쿠폰 1", "위치 1", "50%", "내용이야"),
+            Coupon("쿠폰 2", "위치 2", "50%", "내용이야"),
+            Coupon("쿠폰 3", "위치 3", "50%", "내용이야")
         )
         questAdapter.addCoupons(testCoupons)
 

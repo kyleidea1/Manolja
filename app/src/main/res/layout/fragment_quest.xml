@@ -3,9 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/img"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.QuestFragment">
+    <LinearLayout
+        android:id="@+id/ivMissionTextbox"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:background="@drawable/iv_mission_textbox"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recyclerView"/>
 
     <TextView
         android:id="@+id/tvMissionContent"
@@ -13,10 +21,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Mission"
+        android:gravity="center"
+        android:padding="10dp"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ivMissionTextbox"
+        app:layout_constraintTop_toTopOf="@+id/ivMissionTextbox"
+        app:layout_constraintEnd_toEndOf="@+id/ivMissionTextbox"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMissionTextbox"
         app:layout_constraintHorizontal_bias="0.5" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -24,7 +35,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvMissionContent"
+        app:layout_constraintTop_toBottomOf="@id/ivMissionTextbox"
         app:layout_constraintBottom_toTopOf="@+id/btnChat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -32,8 +43,11 @@
     <Button
         android:id="@+id/btnChat"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Chat"
+        android:layout_height="60dp"
+        android:text="채팅방"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/sand_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnPhoto"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,8 +57,11 @@
     <Button
         android:id="@+id/btnPhoto"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Photo"
+        android:layout_height="60dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:text="사진 선택"
+        android:backgroundTint="@color/sand_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnChat"

@@ -18,6 +18,8 @@ class QuestAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvCoupon: TextView = itemView.findViewById(R.id.tvCoupon)
         val tvLocation: TextView = itemView.findViewById(R.id.tvLocation)
+        val tvDiscount: TextView = itemView.findViewById(R.id.tvDiscount)
+        val tvContent: TextView = itemView.findViewById(R.id.tvContent)
 
         init {
             itemView.setOnClickListener {
@@ -39,6 +41,8 @@ class QuestAdapter(
         val item = couponItems[position]
         holder.tvCoupon.text = item.name
         holder.tvLocation.text = item.location
+        holder.tvDiscount.text = item.discount
+        holder.tvContent.text = item.content
         holder.itemView.isEnabled = itemsEnabled
     }
 
